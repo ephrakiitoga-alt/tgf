@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>TGF AI</title>
+
+    <meta name="theme-color" content="#0B1220">
+    <meta name="description" content="TGF AI Assistant">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon-192.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div class="logo">
+
+            <div class="logo-circle">
+                TGF
+            </div>
+
+            <div class="logo-text">
+
+                <h2>TGF AI</h2>
+
+                <span>Votre assistant intelligent</span>
+
+            </div>
+
+        </div>
+
+        <button id="clearChat" class="icon-btn">
+
+            🗑️
+
+        </button>
+
+    </header>
+
+    <!-- CHAT -->
+
+    <main id="chatContainer">
+
+        <div class="welcome">
+
+            <div class="welcome-logo">
+
+                TGF
+
+            </div>
+
+            <h1>
+
+                Bonjour 👋
+
+            </h1>
+
+            <p>
+
+                Posez votre question à TGF AI.
+
+            </p>
+
+        </div>
+
+        <div id="messages"></div>
+
+    </main>
+
+    <!-- TYPING -->
+
+    <div id="typing" class="typing hidden">
+
+        <div class="dot"></div>
+
+        <div class="dot"></div>
+
+        <div class="dot"></div>
+
+        <span>L'IA réfléchit...</span>
+
+    </div>
+
+    <!-- INPUT -->
+
+    <footer class="composer">
+
+        <form id="chatForm">
+
+            <div class="input-wrapper">
+
+                <textarea
+                    id="prompt"
+                    rows="1"
+                    placeholder="Écrivez votre message..."
+                    autocomplete="off"></textarea>
+
+                <button
+                    id="sendBtn"
+                    type="submit">
+
+                    ➜
+
+                </button>
+
+            </div>
+
+        </form>
+
+        <small>
+
+            TGF AI peut faire des erreurs. Vérifiez les informations importantes.
+
+        </small>
+
+    </footer>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+window.addEventListener("load",()=>{
+
+navigator.serviceWorker.register("sw.js");
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
